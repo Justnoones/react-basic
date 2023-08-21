@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Basic</title>
+    <!-- react cnd -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- babel cdn -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+</head>
+
+<body>
+
+    <h1>Hello World</h1>
+    <div id="name"></div>
+    <!-- this is footer section -->
+    <footer>Footer</footer>
+
+</body>
+<script type="text/babel">
+    const Main = () => {
+        let name = "Wai Yan Ye Yint";
+        let number = 18;
+        let myClass = "my-class"
+
+        let  clickHandler = () => {
+            alert("Hello World!");
+        }
+
+        return (
+            // this is main section
+            <div className={myClass}>
+                <h1>{name.toUpperCase}</h1>
+                <p>{number}</p>
+                <p>{new Date().toDateString()}</p>
+
+               <button onClick={clickHandler}>Click Me</button>
+                <br/>
+                <button onClick={ () => {
+                    alert("Hello World!");
+                }}>Click Me</button>
+            </div>
+        )
+    }
+
+    let reactContainer = document.getElementById("name");
+
+    // create react element
+    let e = React.createElement;
+
+    // create react root element
+    let root = ReactDOM.createRoot(reactContainer);
+
+    // render the react root
+    root.render(e(Main));
+
+</script>
+
+</html>
